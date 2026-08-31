@@ -13,10 +13,6 @@ services:
       - 8080:8080
       - 6881:6881
       - 6881:6881/udp
-      # Jackett port
-      - 9117:9117
-      # FlareSolverr port
-      - 8191:8191
     volumes:
       - ./config/gluetun:/gluetun
     environment:
@@ -51,13 +47,11 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+    ports:
+      - 9117:9117
     volumes:
       - ./config/jackett:/config
       - ${DOWNLOAD_DIR}:/downloads
-    network_mode: "service:gluetun"
-    depends_on:
-      gluetun:
-        condition: service_healthy
     restart: unless-stopped
 
   flaresolverr:
@@ -68,8 +62,6 @@ services:
       - LOG_HTML=false
       - CAPTCHA_SOLVER=none
       - TZ=${TZ}
-    network_mode: "service:gluetun"
-    depends_on:
-      gluetun:
-        condition: service_healthy
+    ports:
+      - 8191:8191
     restart: unless-stopped
