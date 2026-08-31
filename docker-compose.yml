@@ -31,9 +31,11 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
       - WEBUI_PORT=8080
+      - DOCKER_MODS=ghcr.io/vuetorrent/vuetorrent-lsio-mod:latest
     volumes:
       - ./config/qbittorrent:/config
       - ${DOWNLOAD_DIR}:/downloads
+      - ./init-scripts/qbittorrent:/custom-cont-init.d:ro
     network_mode: "service:gluetun"
     depends_on:
       gluetun:
@@ -52,6 +54,7 @@ services:
     volumes:
       - ./config/jackett:/config
       - ${DOWNLOAD_DIR}:/downloads
+      - ./init-scripts/jackett:/custom-cont-init.d:ro
     restart: unless-stopped
 
   flaresolverr:
