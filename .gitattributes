@@ -1,2 +1,5 @@
-# Force LF line endings for shell scripts so they work in Linux containers
+# Force LF line endings for files that run in Linux containers
 *.sh text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+.env text eol=lf
