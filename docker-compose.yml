@@ -19,6 +19,10 @@ services:
       - OPENVPN_PASSWORD=${PIA_PASSWORD}
       - SERVER_REGIONS=${PIA_REGION}
       - VPN_TYPE=${VPN_TYPE}
+      # Allow qBittorrent to reach other containers (Jackett, etc.) on the Docker network
+      - FIREWALL_OUTBOUND_SUBNETS=172.16.0.0/12,192.168.0.0/16
+      # Use Docker's internal DNS so container names resolve
+      - DNS_ADDRESS=127.0.0.11
     restart: unless-stopped
 
   qbittorrent:
@@ -34,10 +38,13 @@ services:
       - ./config/qbittorrent:/config
       - ${DOWNLOAD_DIR}:/downloads
       - ./init-scripts/qbittorrent:/custom-cont-init.d:ro
+      - ./config/jackett:/jackett-config:ro
     network_mode: "service:gluetun"
     depends_on:
       gluetun:
         condition: service_healthy
+      jackett:
+        condition: service_started
     restart: unless-stopped
 
   jackett:
