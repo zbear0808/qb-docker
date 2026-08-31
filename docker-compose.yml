@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   gluetun:
     image: qmcgaw/gluetun:latest
@@ -17,8 +15,8 @@ services:
       - ./config/gluetun:/gluetun
     environment:
       - VPN_SERVICE_PROVIDER=pia
-      - OPENVPN_USER=${PIA_USERNAME}
-      - OPENVPN_PASSWORD=${PIA_PASSWORD}
+      - VPN_USER=${PIA_USERNAME}
+      - VPN_PASSWORD=${PIA_PASSWORD}
       - SERVER_REGIONS=${PIA_REGION}
       - VPN_TYPE=${VPN_TYPE}
     restart: unless-stopped

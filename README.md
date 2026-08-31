@@ -1,6 +1,6 @@
 # qBittorrent + Jackett + FlareSolverr + PIA VPN Stack
 
-This repository contains a Docker Compose configuration for a complete, VPN-routed media downloading stack. It routes the traffic for qBittorrent, Jackett, and FlareSolverr entirely through a Private Internet Access (PIA) VPN using [Gluetun](https://github.com/qdm12/gluetun).
+This repository contains a Docker Compose configuration for a media downloading stack. It routes the traffic for **qBittorrent** securely through a Private Internet Access (PIA) VPN using [Gluetun](https://github.com/qdm12/gluetun), while **Jackett** and **FlareSolverr** use the standard host network to bypass the VPN for better compatibility and search performance.
 
 ## Prerequisites
 - **Docker** and **Docker Compose** installed on your system.
