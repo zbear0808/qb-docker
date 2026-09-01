@@ -5,17 +5,18 @@ This repository contains a Docker Compose configuration for a media downloading 
 ## Prerequisites
 - **Docker** and **Docker Compose** installed on your system.
 - An active **Private Internet Access (PIA)** subscription.
+- Git, so you can clone this repo to your machine
 
 ---
 
 ## Setup on Different Operating Systems
 
-### Linux (Ubuntu, Debian, etc.)
+### Linux
 1. Install Docker and Docker Compose via your package manager or the official Docker installation script.
 2. Ensure your user is part of the `docker` group.
 3. Find your user ID and group ID by running `id -u` and `id -g` in the terminal. Use these values for `PUID` and `PGID` in your `.env` file to prevent file permission issues.
 
-### Windows
+### Windows (not recommended as it'll use alot of ram)
 1. Install **Docker Desktop** and enable the **WSL 2** backend.
 2. Install a WSL 2 distribution (like Ubuntu) from the Microsoft Store.
 3. For significantly better performance, clone this repository inside your WSL 2 file system (e.g., `\\wsl$\Ubuntu\home\user\qb-docker`) rather than the native Windows file system (`C:\`).
@@ -57,6 +58,25 @@ This stack is pre-configured with automation scripts that run every time the con
 - **Access the Web UI:** Go to `http://localhost:9117`
 - **Authentication:** Jackett natively has no password on the local network, and this is enforced automatically.
 - **FlareSolverr Integration:** Jackett is automatically pre-configured to use the FlareSolverr API. No manual setup is required.
+
+### 3. Configuring Jackett Indexers
+
+Because qBittorrent relies on Jackett for search, you need to configure your preferred torrent trackers (Indexers) inside Jackett. 
+
+This is a **one-time setup**. Once configured, the settings are saved as `.json` files in the `config/jackett/Jackett/Indexers/` folder, so they will automatically persist across fresh deployments.
+
+**To add or change Indexers:**
+1. Open the Jackett Web UI at `http://localhost:9117`.
+2. Click the **"+ Add Indexer"** button at the top.
+3. Search for your preferred trackers (e.g., *1337x*, *TorrentGalaxy*, *The Pirate Bay*) and click the **"+"** icon to add them.
+4. *(Optional but recommended)* Test the indexers in the Jackett UI to ensure they are returning results.
+5. In your terminal, commit the newly generated JSON files to Git:
+   ```bash
+   git add config/jackett/Jackett/Indexers/
+   git commit -m "Add new Jackett indexers"
+   ```
+
+As long as these configuration files remain in the repository, any future `docker compose up` commands will automatically load these indexers into Jackett, and qBittorrent will be able to search them immediately.
 
 ---
 
