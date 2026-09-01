@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sitelink",
+    "type": "inputstring",
+    "name": "Site Link",
+    "value": "https://eztvx.to/"
+  },
+  {
+    "id": "cookieheader",
+    "type": "hiddendata",
+    "name": "CookieHeader",
+    "value": "PHPSESSID=uje1eq99dv124n5kca3s3n60r8; cf_clearance=.by05cH203tSInw1.KY.vkD9rEpVS0BiGT_on0k6bsc-1788226530-1.2.1.1-As7I9etPa2J9m3HoQXYXmsrPjmSNVpUaeS7KIdqtt3.i0triUOo6xUInLoXXc_xViaB5IOspzinRMTCojZLxzh6y5z1vHUchK7P8w8X1l8P3JnhA6blTFrQ7bw8pwY_ujOYLlxUJlj697o3pK_nPnTqYxb88URmRiCO7Br9ZulqOD2C3HCY.gELXATcwFhneuGumHoBCFfFoq_znhVDq6OerxeN2yZNZ3utm0IJ8rq_qg5rW32GwAoqyU_rE0HfhUIW02O0.RxBEM15J6ZfEoh5NBkRbMrdv7zfSlAZxY46J6NtVg0ljza7slvWVIiQuzVtXoNJx2ed4CBxqnSTWXnGaTuUML9X9axZYPcSV2b02HG4us7TM4r2AvqZ1EZEVte0NYJdeGsDCwxjIK3T8b9Yk5h2049cCCjaJSvR2aEw7JheUir.mvuOV4XJ0klLfP9X8xP1xd0YeTv9nWqB7Nw"
+  },
+  {
+    "id": "lasterror",
+    "type": "hiddendata",
+    "name": "LastError",
+    "value": null
+  },
+  {
+    "id": "tags",
+    "type": "inputtags",
+    "name": "Tags",
+    "value": ""
+  }
+]

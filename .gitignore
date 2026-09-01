@@ -1,3 +1,10 @@
 .env
 downloads/
-config/
+# Ignore everything in the config folder
+config/*
+# ... EXCEPT the Jackett Indexers folder
+!config/jackett/
+config/jackett/*
+!config/jackett/Jackett/
+config/jackett/Jackett/*
+!config/jackett/Jackett/Indexers/

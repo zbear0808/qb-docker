@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sitelink",
+    "type": "inputstring",
+    "name": "Site Link",
+    "value": "https://kickass.torrentbay.st/"
+  },
+  {
+    "id": "cookieheader",
+    "type": "hiddendata",
+    "name": "CookieHeader",
+    "value": "cf_chl_rc_ni=1; cf_clearance=bH5L1obghTB.4wUOCRzDGM9.pYrXHLBAiL6SFBdJsl4-1788226554-1.2.1.1-XRK392p9iMgM746EtcKvzhcFSo97cVbdjIy.HWs5apuSm3G7bu7ivYtS0Q5Vl_ZBeUIxVeyCZ75P_tHj0geCtuaK7JLo0k1_N8O8QQjS5DwjptLzE08IVXmB0D.rbyHhtKR8SrBBWxMLtv3kCURT_YsX9WDKfrjGnENn.2V34OgzdiaLR8JyqPHFSEGlXDvZfQNX7YCjlb8VlRMi03dc7h8Aw2ywDiYCKfPMibf6vyZYTBFtO6Juz2kzgmREKd8huNhSEeMGwn74UD414zOCRjhAig.884Biyy7.h3k3oqwVWesBvd.PdV3_mDqvXQA11DJROADy.TI0uQmpUjZVbuk67DXj.G5a2GMwUX82Fu83d6jzu_TFZH0v41QshwwLBciCV_XxSXBMvXDFCUbmIJnTMEeYFgM1WnooRhAhYeynsM4hq1wAZv7S9bRN8_JRDGFJ7Y3RWz6faZCZd6Pd.Skfbcve1apDxLDbQfXonqy9MHApsQwhFNdaEsHxAOhFFPjn5XWseSrpze_6nC..dw"
+  },
+  {
+    "id": "lasterror",
+    "type": "hiddendata",
+    "name": "LastError",
+    "value": null
+  },
+  {
+    "id": "tags",
+    "type": "inputtags",
+    "name": "Tags",
+    "value": ""
+  }
+]
