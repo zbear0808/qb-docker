@@ -20,7 +20,7 @@ fi
 
 if command -v jq &> /dev/null; then
     tmp=$(mktemp)
-    jq '.FlareSolverrUrl = "http://flaresolverr:8191" | .AdminPassword = null' "$CONF" > "$tmp" && mv "$tmp" "$CONF"
+    jq '.FlareSolverrUrl = "http://localhost:8191" | .AdminPassword = null | .LocalBindAddress = "*" | .AllowExternal = true' "$CONF" > "$tmp" && mv "$tmp" "$CONF"
 else
     echo "ERROR: jq is still not available. Unable to update ServerConfig.json cleanly."
 fi

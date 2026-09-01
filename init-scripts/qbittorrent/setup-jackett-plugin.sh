@@ -4,7 +4,7 @@
 
 JACKETT_CONF="/jackett-config/Jackett/ServerConfig.json"
 QB_JACKETT_JSON="/config/qBittorrent/nova3/engines/jackett.json"
-JACKETT_URL="http://jackett:9117"
+JACKETT_URL="http://localhost:9117"
 
 echo "Configuring qBittorrent Jackett search plugin..."
 
